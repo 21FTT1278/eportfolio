@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>week 13</title>
+</head>
+<body>
+<input type="text" id="name" placeholder="name"><br>
+<input type="radio" name="gender" value="male" id="male">Male
+<input type="radio" name="gender" value="female" id="female">female<br>
+<input type="checkbox" name="wishlist" value="money">money
+<input type="checkbox" name="wishlist" value="travel">travel
+<input type="checkbox" name="wishlist" value="happiness">happiness<br>
+<select name="choice" id="wish">
+	<option value="eternal">eternal life</option>
+	<option value="young">forever young</option>
+	<option value="beauty">eternal beauty</option>
+</select>
+<button onclick="retGender()">'reveal gender</button>
+<button onclick="retWL()">'reveal wishlist</button>
+<button onclick="retSelect">'reveal select</button>
+
+<script>
+function retGender(){
+	var male=document.getElementById("male");
+	var female=document.getElementById("female");
+
+	if(male.checked){alert("male is selected")}
+
+	if(female.checked){alert("female is selected")}
+}
+
+function retWL(){
+	var wishlist=document.getElementsByName("wishlist");
+	var wishes="Your wishes ";
+
+	if(wishlist[0].checked)
+		{wishes=wishes+wishlist[0].value+" "}
+
+	if(wishlist[1].checked)
+		{wishes=wishes+wishlist[1].value+" "}
+
+	if(wishlist[2].checked)
+		{wishes=wishes+wishlist[2].value+" "}
+
+	else{wishes = "your a sad and hopeless person"}
+
+	alert(wishes)
+	
+	}
+
+function retWL1(){
+	var wishlist=document.getElementsByName("wishlist");
+	var wishes="Your wishes ";
+
+	for (var i=0;i<wishlist.lenght;i++) {
+		if (wishlist[i],checked) 
+			{wishes=wishes+wishlist[i].value+""}
+	}
+
+	alert(wishes)
+	
+	}
+
+	function retSelect(){
+	var wish=document.getElementById("wish");
+	//alert(wish.value)
+	alert(wish.options[wish.selectedIndex].value)
+}
+</script>
+</body>
+</html>
